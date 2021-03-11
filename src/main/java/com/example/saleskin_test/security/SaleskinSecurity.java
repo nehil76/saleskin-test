@@ -26,7 +26,7 @@ public class SaleskinSecurity extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests().antMatchers("/authentication").permitAll()
 		.antMatchers("/logout").permitAll().antMatchers("/**")
-				.hasRole("admin").and().httpBasic();
+				.hasRole("admin").and().formLogin();
 	}
 	
 	@Bean
