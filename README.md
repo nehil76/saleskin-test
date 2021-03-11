@@ -1,5 +1,18 @@
 # saleskin-test
-It is a sample todo app, it can read,save,update and filter todolist.
+It is a sample todo app, it can read,save,update and filter todolist. H2 runtime is used to persist data and JPA is used to retrieve and persist data.
+
+•	H2 console accessible at http://localhost:8080/h2-console
+
+•	Custom exception will be thrown if no data is found for requested id with proper message. curl -X GET http://localhost:8080/todo/34 -v
+
+•	Separation of concern is addressed
+
+      a) Datasource can be configured for other db. example oracle,sql
+      b) Controller,Service and Repository are created.
+      c) Global exception handler will handle exception, no code is written inside controller to throw exception and HTTP status in case of error.
+      
+•	Code is self readable, Interfaces are created, it can handle changes for ex. by configuring datasource in application.properties new database can be configured.
+
 
 ## Installation
 Download or clone this repo. and import it as a maven project, run maven update to install dependencies.
